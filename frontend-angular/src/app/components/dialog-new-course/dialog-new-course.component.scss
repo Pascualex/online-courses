@@ -1,0 +1,83 @@
+@import "./src/variables.scss";
+
+.dialog-new-course {
+  padding: 2px 5px 0 0;
+
+  .title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+  }
+
+  .message {
+    margin: 0;
+    font-size: 16px;
+    color: red;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .field {
+    width: 100%;
+    margin: 5px 0 0 0;
+
+    .field-content {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .check {
+      margin: 0;
+      font-size: 20px;
+      color: green;
+    }
+  }
+
+  .field.half-row {
+    width: 48%;
+  }
+
+  .field.one-third-row {
+    width: 32%;
+  }
+
+  .field.two-thirds-row {
+    width: 64%;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    .create {
+      width: 120px;
+      margin: 20px 0 0 0;
+      padding: 10px 0;
+      text-align: center;
+      border: solid 2px $main-color;
+      border-radius: 4px;
+      background-color: white;
+      color: $main-color;
+      font-size: 16px;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+    }
+
+    .create.teachers {
+      width: 140px;
+    }
+
+    .create:hover {
+      background-color: $main-color;
+      color: white;
+    }
+
+    .create:focus {
+      background-color: $main-color;
+      color: white;
+    }
+  }
+}
+

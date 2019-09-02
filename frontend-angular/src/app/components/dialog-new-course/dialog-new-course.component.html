@@ -1,0 +1,87 @@
+<div class="dialog-new-course">
+  <h1 class="title">Registrar curso</h1>
+    <form [formGroup]="formControl" *ngIf="teachers.length > 0" (ngSubmit)="createCourse()">
+      <mat-form-field class="field" appearance="outline">
+        <mat-label class="field-content">Título</mat-label>
+        <input matInput class="field-content" formControlName="title"
+               placeholder="Introduce su título" maxlength="50" autocomplete="off">
+        <mat-hint align="end">{{formControl.get('title').value.length}} / 50</mat-hint>
+        <mat-error *ngIf="formControl.get('title').hasError('required')">
+          Título <strong>necesario</strong>
+        </mat-error>
+        <mat-error *ngIf="!formControl.get('title').hasError('required')
+                          && formControl.get('title').hasError('minlength')">
+          Debe tener al menos <strong>6 caracteres</strong>
+        </mat-error>
+        <mat-error *ngIf="!formControl.get('title').hasError('required')
+                          && !formControl.get('title').hasError('minlength')">
+          Espacios solo válidos como separadores.
+        </mat-error>
+      </mat-form-field>
+      <div class="row">
+        <mat-form-field class="field half-row" appearance="outline">
+          <mat-label class="field-content">Horas</mat-label>
+          <input matInput class="field-content" formControlName="hours"
+                 placeholder="Introduce sus horas" maxlength="2" autocomplete="off"
+                 align="end" (keypress)="numberOnly($event)">
+          <mat-error *ngIf="formControl.get('hours').hasError('required')">
+            Horas <strong>necesarias</strong>
+          </mat-error>
+          <mat-error *ngIf="!formControl.get('hours').hasError('required')">
+            Debe ser <strong>mayor que 0</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="field half-row" appearance="outline">
+          <mat-label class="field-content">Nivel</mat-label>
+          <mat-select formControlName="level">
+            <mat-option [value]="CourseLevel.Basic">Básico</mat-option>
+            <mat-option [value]="CourseLevel.Intermediate">Intermedio</mat-option>
+            <mat-option [value]="CourseLevel.Advanced">Avanzado</mat-option>
+          </mat-select>
+          <mat-error *ngIf="formControl.get('level').hasError('required')">
+            Nivel <strong>necesario</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="field two-thirds-row" appearance="outline">
+          <mat-label class="field-content">Profesor</mat-label>
+          <input matInput class="field-content" formControlName="teacher"
+                 placeholder="Selecciona su profesor" maxlength="20" [matAutocomplete]="auto">
+          <mat-icon matSuffix class="check" *ngIf="formControl.get('teacher').valid">
+            check_circle
+          </mat-icon>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                            [displayWith]="displayTeacher">
+            <mat-option *ngFor="let teacher of filteredTeachers" [value]="teacher">
+              {{teacher.name}}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-error *ngIf="formControl.get('teacher').hasError('required')">
+            Profesor <strong>necesario</strong>
+          </mat-error>
+          <mat-error *ngIf="!formControl.get('teacher').hasError('required')">
+            <strong>Selecciona</strong> un profesor de la lista
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="field one-third-row" appearance="outline">
+          <mat-label class="field-content">Estado</mat-label>
+          <mat-select formControlName="active">
+            <mat-option [value]="true">Activo</mat-option>
+            <mat-option [value]="false">Inactivo</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="bottom">
+        <button class="create">Registrar</button>
+      </div>
+    </form>
+  <ng-container *ngIf="teachers.length === 0">
+    <h2 class="message">Sin profesores no es posible crear un curso.</h2>
+    <div class="bottom">
+      <button class="create teachers" (click)="goToTeachers()" tabIndex="-1">
+        Crear profesor
+      </button>
+    </div>
+  </ng-container>
+</div>

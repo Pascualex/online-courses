@@ -1,0 +1,2 @@
+ - Imágenes de cursos y profesores
+ - Mensaje de fallo en la conexión

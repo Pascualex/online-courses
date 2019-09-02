@@ -1,0 +1,86 @@
+@import "./src/variables.scss";
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+
+  .left {
+    display: flex;
+    align-items: flex-end;
+
+    .title {
+      margin: 0;
+      font-size: 28px;
+      color: rgb(30, 30, 30);
+    }
+
+    .spinner {
+      margin: 0 0 5px 20px;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .bar-button {
+      width: 120px;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 0;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 4px;
+      background-color: white;
+      font-size: 16px;
+      transition-duration: 0.2s;
+      transition-timing-function: ease;
+    }
+
+    .admin {
+      border-color: $main-color;
+      color: $main-color;
+    }
+
+    .admin:hover {
+      background-color: $main-color;
+      color: white;
+    }
+
+    .new {
+      margin: 0 10px 0 0;
+      border-color: green;
+      color: green;
+    }
+
+    .new:hover {
+      background-color: green;
+      color: white;
+    }
+
+    .disabled:hover {
+      background-color: rgb(60, 60, 60);
+      border-color: rgb(60, 60, 60);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .section-top {
+    flex-direction: column;
+
+    .spinner {
+      display: none;
+    }
+
+    .right {
+      width: 100%;
+      margin-top: 25px;
+
+      .bar-button {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "./src/variables.scss";
+
+.navigation-bar {
+  height: 50px;
+
+  .navigation-button {
+    height: 100%;
+    margin: 0 0 0 20px;
+    padding: 0;
+    border: none;
+    border-bottom: solid 2px $main-color;
+    background-color: $main-color;
+    color: white;
+    font-size: 18px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+
+  .navigation-button:hover {
+    border-bottom-color: #00ffe5;
+    color: #00ffe5;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="teachers-container">
+  <app-section-top [title]="admin ? 'Administrar profesores' : 'Profesores'"
+                   [admin]="admin" [connectionSucceed]="connectionSucceed"
+                   (setAdminEvent)="setAdmin($event)"
+                   (createNewEvent)="createTeacher($event)"></app-section-top>
+  <app-filters-teacher [initialSearchFilter]="searchFilter"
+                       (setFiltersReadyEvent)="setFiltersReady($event)"
+                       (setSearchFilterEvent)="setSearchFilter($event)"></app-filters-teacher>
+  <div class="bar-placeholder">
+    <mat-progress-bar class="bar" mode="indeterminate" *ngIf="queries > 0"></mat-progress-bar>
+  </div>
+  <h2 class="message" *ngIf="emptyResult">No se ha encontrado ningún profesor</h2>
+  <h2 class="message" *ngIf="connectionFailed">
+    Fallo de conexión - No se han podido obtener los profesores
+  </h2>
+  <app-card-grid class="card-grid" *ngIf="teachers.length > 0">
+    <button class="card-clickable-wrapper" [class.hover-effect]="!admin" [disabled]="admin"
+            *ngFor="let teacher of teachers" (click)="goToCourses(teacher)">
+      <app-card class="card" [imageLink]="'/assets/images/teacher.jpg'" [admin]="admin"
+                (removeEvent)="removeTeacher(teacher)">
+        <app-card-detail-teacher [teacher]="teacher"></app-card-detail-teacher>
+      </app-card>
+    </button>
+  </app-card-grid>
+</div>

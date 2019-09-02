@@ -1,0 +1,15 @@
+<div class="section-top">
+  <div class="left">
+    <h2 class="title">{{title}}</h2>
+  </div>
+  <div>
+    <div class="right">
+      <button class="bar-button admin" [class.disabled]="!connectionSucceed"
+              *ngIf="!admin" (click)="setAdmin(true)">Administrar</button>
+      <ng-container *ngIf="admin">
+        <button class="bar-button admin" (click)="setAdmin(false)">Ver público</button>
+        <button class="bar-button new" (click)="createNew()">Nuevo</button>
+      </ng-container>
+    </div>
+  </div>
+</div>

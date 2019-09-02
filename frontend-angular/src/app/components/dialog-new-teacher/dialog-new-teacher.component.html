@@ -1,0 +1,25 @@
+<div class="dialog-new-teacher">
+  <h1 class="title">Registrar profesor</h1>
+  <form [formGroup]="formControl" (ngSubmit)="createTeacher()">
+    <mat-form-field class="field" appearance="outline">
+      <mat-label class="field-label">Nombre</mat-label>
+      <input matInput class="input" formControlName="name"
+             placeholder="Introduce su nombre" maxlength="20" autocomplete="off">
+      <mat-hint align="end">{{formControl.get('name').value.length}} / 20</mat-hint>
+      <mat-error *ngIf="formControl.get('name').hasError('required')">
+        Nombre <strong>necesario</strong>
+      </mat-error>
+      <mat-error *ngIf="!formControl.get('name').hasError('required')
+                        && formControl.get('name').hasError('minlength')">
+        Debe tener al menos <strong>6 caracteres</strong>
+      </mat-error>
+      <mat-error *ngIf="!formControl.get('name').hasError('required')
+                        && !formControl.get('name').hasError('minlength')">
+        Espacios solo válidos como separadores.
+      </mat-error>
+    </mat-form-field>
+    <div class="bottom">
+      <button class="create">Registrar</button>
+    </div>
+  </form>
+</div>

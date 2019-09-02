@@ -1,0 +1,71 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.mat-form-field-appearance-outline {
+
+  .mat-form-field-infix {
+    padding: 0.5em 0 !important;
+    margin: 0 0 0.4em 0 !important;
+
+    .mat-form-field-label {
+      transform: translateY(-0.2em);
+    }
+  }
+
+  .mat-form-field-suffix {
+    * {
+      transform: translatex(0.25em);
+    }
+  }
+}
+
+.mat-form-field-appearance-legacy {
+
+  .mat-form-field-suffix {
+    * {
+      transform: translateY(0.15em);
+    }
+  }
+}
+
+.mat-option {
+  height: 36px !important;
+  padding: 0 10px !important;
+}
+
+.mat-progress-bar-buffer {
+  background-color: white;
+}
+
+.mat-slide-toggle-thumb-container {
+  cursor: pointer !important;
+
+  .mat-slide-toggle-thumb {
+    cursor: pointer !important;
+  }
+}
+
+.mat-icon {
+  display: block !important;
+}

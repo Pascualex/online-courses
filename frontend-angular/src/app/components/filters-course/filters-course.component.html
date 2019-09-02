@@ -1,0 +1,29 @@
+<div class="filters-course">
+  <mat-form-field class="field" floatLabel="never">
+    <mat-label class="field-content">Búsqueda (palabras completas)</mat-label>
+    <input matInput class="field-content" [formControl]="searchFormControl"
+           maxlength="50" autocomplete="off">
+  </mat-form-field>
+  <mat-form-field class="field" floatLabel="never">
+    <mat-label class="field-content">Profesor</mat-label>
+    <input matInput class="field-content" [formControl]="teacherFormControl"
+           maxlength="20" [matAutocomplete]="auto">
+    <mat-icon matSuffix class="check" *ngIf="teacherFormControl.value && teacherFormControl.valid">
+      check_circle
+    </mat-icon>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayTeacher">
+      <mat-option *ngFor="let teacher of filteredTeachers" [value]="teacher">
+        {{teacher.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="field" floatLabel="never">
+    <mat-label class="field-content">Nivel</mat-label>
+    <mat-select [formControl]="levelFormControl">
+      <mat-option>- Sin filtro -</mat-option>
+      <mat-option [value]="CourseLevel.Basic">Básico</mat-option>
+      <mat-option [value]="CourseLevel.Intermediate">Intermedio</mat-option>
+      <mat-option [value]="CourseLevel.Advanced">Avanzado</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

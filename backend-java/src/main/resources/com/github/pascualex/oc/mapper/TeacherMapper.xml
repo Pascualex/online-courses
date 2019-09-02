@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.pascualex.oc.mapper.TeacherMapper">
+    <resultMap id="teacherResult" type="Teacher">
+        <constructor>
+            <idArg column="teacher_id" javaType="_int"/>
+            <arg column="name" javaType="String"/>
+        </constructor>
+    </resultMap>
+
+    <resultMap id="teacherResultWithNumber" type="Teacher">
+        <constructor>
+            <idArg column="teacher_id" javaType="_int"/>
+            <arg column="name" javaType="String"/>
+            <arg column="course_count" javaType="_int"/>
+        </constructor>
+    </resultMap>
+
+    <select id="getTeachers" resultMap="teacherResultWithNumber">
+        SELECT t.id AS teacher_id, t.name, COUNT(c.id) AS course_count
+        FROM teachers as t LEFT JOIN courses AS c ON t.id=c.teacher_id
+        GROUP BY t.id
+        ORDER BY t.name, t.id
+    </select>
+
+    <select id="getTeachersById" resultMap="teacherResultWithNumber">
+        SELECT t.id AS teacher_id, t.name, COUNT(c.id) AS course_count
+        FROM teachers as t LEFT JOIN courses AS c ON t.id=c.teacher_id
+        WHERE t.id=#{id}
+        GROUP BY t.id
+        ORDER BY t.name, t.id
+    </select>
+
+    <insert id="addTeacher" useGeneratedKeys="true" keyProperty="teacher.id" keyColumn="id">
+        INSERT INTO teachers (name)
+        VALUES (#{teacher.name})
+    </insert>
+
+    <delete id="removeTeachersById">
+        DELETE FROM teachers
+        WHERE id=#{id}
+    </delete>
+</mapper>

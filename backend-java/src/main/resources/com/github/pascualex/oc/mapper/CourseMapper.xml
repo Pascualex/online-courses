@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.pascualex.oc.mapper.CourseMapper">
+    <resultMap id="courseResult" type="Course">
+        <constructor>
+            <idArg column="course_id" javaType="_int"/>
+            <arg column="title" javaType="String"/>
+            <arg column="level" javaType="String"/>
+            <arg column="hours" javaType="_int"/>
+            <arg column="active" javaType="_boolean"/>
+            <arg resultMap="com.github.pascualex.oc.mapper.TeacherMapper.teacherResult" javaType="Teacher"/>
+        </constructor>
+    </resultMap>
+
+    <select id="getCourses" resultMap="courseResult">
+        SELECT c.id as course_id, c.title, c.level, c.hours, c.active, t.id as teacher_id, t.name
+        FROM courses AS c LEFT JOIN teachers AS t ON t.id=c.teacher_id
+        ORDER BY c.title, t.name, c.active, c.level, c.hours, c.id, t.id
+    </select>
+
+    <select id="getCoursesById" resultMap="courseResult">
+        SELECT c.id as course_id, c.title, c.level, c.hours, c.active, t.id as teacher_id, t.name
+        FROM courses AS c LEFT JOIN teachers AS t ON t.id=c.teacher_id
+        WHERE c.id=#{id}
+        ORDER BY c.title, t.name, c.active, c.level, c.hours, c.id, t.id
+    </select>
+
+    <insert id="addCourse" useGeneratedKeys="true" keyProperty="course.id" keyColumn="id">
+        INSERT INTO courses (title, level, hours, active, teacher_id)
+        VALUES (#{course.title}, #{course.level}, #{course.hours}, #{course.active}, #{course.teacher.id})
+    </insert>
+
+    <update id="setCoursesActiveById">
+        UPDATE courses
+        SET active=#{active}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="removeCoursesById">
+        DELETE FROM courses
+        WHERE id=#{id}
+    </delete>
+</mapper>

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: pascualex-oc-mysql
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_DATABASE: oc
+      MYSQL_USER: pascualex
+      MYSQL_PASSWORD: pascualex
+      MYSQL_ROOT_PASSWORD: pascualex
+    volumes:
+      - ./db-storage:/var/lib/mysql
+      - ./db-init:/docker-entrypoint-initdb.d

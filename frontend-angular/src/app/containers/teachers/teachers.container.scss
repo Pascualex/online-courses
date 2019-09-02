@@ -1,0 +1,50 @@
+.teachers-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+
+  .bar-placeholder {
+    height: 5px;
+    margin: 1px 0 0 0;
+
+    .bar {
+      height: 100%;
+    }
+  }
+
+  .message {
+    width: 100%;
+    margin: 45px 0 0 0;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .card-grid {
+    display: block;
+    margin: 25px 0 0 0;
+
+    .card-clickable-wrapper {
+      padding: 0;
+      border: none;
+      background-color: white;
+      text-align: left;
+
+      .card {
+        display: block;
+      }
+    }
+
+    .card-clickable-wrapper:disabled {
+      cursor: default;
+    }
+    .hover-effect {
+      transition-duration: 0.3s;
+      transition-delay: ease;
+    }
+
+    .hover-effect:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                               "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias alias="Course" type="com.github.pascualex.oc.model.Course"/>
+        <typeAlias alias="Teacher" type="com.github.pascualex.oc.model.Teacher"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="com/github/pascualex/oc/mapper/CourseMapper.xml"/>
+        <mapper resource="com/github/pascualex/oc/mapper/TeacherMapper.xml"/>
+    </mappers>
+</configuration>

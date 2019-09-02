@@ -1,0 +1,19 @@
+<div class="card" [class.inactive]="!active" >
+  <button class="remove-button remove" *ngIf="admin" (click)="remove()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button class="clickable-wrapper" [disabled]="!admin || !activable" (click)="setActive(!active)">
+    <ng-container *ngIf="admin && activable">
+      <mat-icon class="toggle-icon material-icons-outlined" *ngIf="!active">toggle_off</mat-icon>
+      <mat-icon class="toggle-icon material-icons-outlined" *ngIf="active">toggle_on</mat-icon>
+    </ng-container>
+    <div class="card-content" [class.inactive]="!active">
+      <div class="image-placeholder">
+        <h1 class="image-text top">{{imageTextTop}}</h1>
+        <h1 class="image-text bottom">{{imageTextBottom}}</h1>
+        <img class="image" src="{{imageLink}}">
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </button>
+</div>

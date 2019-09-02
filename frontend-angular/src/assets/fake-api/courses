@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Un primer vistazo a HTML, CSS y JS",
+    "level": "BASIC",
+    "hours": 5,
+    "active": true,
+    "teacher": {
+        "id": 1,
+        "name": "Andrés Cabrera"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Tu primera web con Angular",
+    "level": "INTERMEDIATE",
+    "hours": 10,
+    "active": false,
+    "teacher": {
+        "id": 1,
+        "name": "Andrés Cabrera"
+    }
+  },
+  {
+    "id": 3,
+    "title": "VUE en profundidad",
+    "level": "ADVANCED",
+    "hours": 15,
+    "active": true,
+    "teacher": {
+        "id": 2,
+        "name": "Jaime Palomero"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Optimización de peticiones en MySQL",
+    "level": "ADVANCED",
+    "hours": 10,
+    "active": true,
+    "teacher": {
+        "id": 1,
+        "name": "Andrés Cabrera"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Introducción a la programación en Java",
+    "level": "BASIC",
+    "hours": 15,
+    "active": true,
+    "teacher": {
+        "id": 3,
+        "name": "Manuel Sanchez"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Gestión óptima de memoria en C",
+    "level": "INTERMEDIATE",
+    "hours": 20,
+    "active": true,
+    "teacher": {
+        "id": 3,
+        "name": "Manuel Sanchez"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Optimización mediante funciones en ensamblador",
+    "level": "ADVANCED",
+    "hours": 15,
+    "active": true,
+    "teacher": {
+        "id": 2,
+        "name": "Jaime Palomero"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Programación competitiva: todo lo que necesitas saber",
+    "level": "INTERMEDIATE",
+    "hours": 40,
+    "active": true,
+    "teacher": {
+        "id": 2,
+        "name": "Jaime Palomero"
+    }
+  }
+]
