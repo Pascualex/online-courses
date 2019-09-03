@@ -13,10 +13,10 @@ export class NavigationBarComponent implements OnInit {
   public ngOnInit(): void { }
 
   public goToCourses(): void {
-    this.router.navigateByUrl('/cursos');
+    this.router.navigateByUrl('/courses');
   }
 
   public goToTeachers(): void {
-    this.router.navigateByUrl('/profesores');
+    this.router.navigateByUrl('/teachers');
   }
 }

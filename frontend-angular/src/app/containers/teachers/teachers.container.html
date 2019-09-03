@@ -1,5 +1,5 @@
 <div class="teachers-container">
-  <app-section-top [title]="admin ? 'Administrar profesores' : 'Profesores'"
+  <app-section-top [title]="admin ? 'Manage teachers' : 'Teachers'"
                    [admin]="admin" [connectionSucceed]="connectionSucceed"
                    (setAdminEvent)="setAdmin($event)"
                    (createNewEvent)="createTeacher($event)"></app-section-top>
@@ -9,9 +9,9 @@
   <div class="bar-placeholder">
     <mat-progress-bar class="bar" mode="indeterminate" *ngIf="queries > 0"></mat-progress-bar>
   </div>
-  <h2 class="message" *ngIf="emptyResult">No se ha encontrado ningún profesor</h2>
+  <h2 class="message" *ngIf="emptyResult">No teachers found</h2>
   <h2 class="message" *ngIf="connectionFailed">
-    Fallo de conexión - No se han podido obtener los profesores
+    Connection failed - The teachers could not be loaded
   </h2>
   <app-card-grid class="card-grid" *ngIf="teachers.length > 0">
     <button class="card-clickable-wrapper" [class.hover-effect]="!admin" [disabled]="admin"

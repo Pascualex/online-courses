@@ -1,6 +1,6 @@
 <div class="filters-course">
   <mat-form-field class="field" floatLabel="never">
-    <mat-label class="field-content">Búsqueda (palabras completas)</mat-label>
+    <mat-label class="field-content">Search (full words)</mat-label>
     <input matInput class="field-content" [formControl]="searchFormControl"
            maxlength="50" autocomplete="off">
   </mat-form-field>
@@ -21,9 +21,9 @@
     <mat-label class="field-content">Nivel</mat-label>
     <mat-select [formControl]="levelFormControl">
       <mat-option>- Sin filtro -</mat-option>
-      <mat-option [value]="CourseLevel.Basic">Básico</mat-option>
-      <mat-option [value]="CourseLevel.Intermediate">Intermedio</mat-option>
-      <mat-option [value]="CourseLevel.Advanced">Avanzado</mat-option>
+      <mat-option [value]="CourseLevel.Basic">Basic</mat-option>
+      <mat-option [value]="CourseLevel.Intermediate">Intermediate</mat-option>
+      <mat-option [value]="CourseLevel.Advanced">Advanced</mat-option>
     </mat-select>
   </mat-form-field>
 </div>

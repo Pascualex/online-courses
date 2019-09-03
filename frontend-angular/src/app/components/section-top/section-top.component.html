@@ -5,10 +5,10 @@
   <div>
     <div class="right">
       <button class="bar-button admin" [class.disabled]="!connectionSucceed"
-              *ngIf="!admin" (click)="setAdmin(true)">Administrar</button>
+              *ngIf="!admin" (click)="setAdmin(true)">Manage</button>
       <ng-container *ngIf="admin">
-        <button class="bar-button admin" (click)="setAdmin(false)">Ver público</button>
-        <button class="bar-button new" (click)="createNew()">Nuevo</button>
+        <button class="bar-button admin" (click)="setAdmin(false)">Public</button>
+        <button class="bar-button new" (click)="createNew()">New</button>
       </ng-container>
     </div>
   </div>

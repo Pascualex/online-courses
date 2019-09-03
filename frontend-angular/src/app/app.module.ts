@@ -25,7 +25,6 @@ import { FiltersCourseComponent } from './components/filters-course/filters-cour
 import { FiltersTeacherComponent } from './components/filters-teacher/filters-teacher.component';
 import { HomeView } from './views/home/home.view';
 import { HomeContainer } from './containers/home/home.container';
-import { QuickStartContainer } from './containers/quick-start/quick-start.container';
 
 @NgModule({
   declarations: [
@@ -46,8 +45,7 @@ import { QuickStartContainer } from './containers/quick-start/quick-start.contai
     FiltersCourseComponent,
     FiltersTeacherComponent,
     HomeView,
-    HomeContainer,
-    QuickStartContainer
+    HomeContainer
   ],
   imports: [
     BrowserModule,

@@ -86,7 +86,7 @@ export class DialogNewCourseComponent implements OnInit {
   }
 
   public goToTeachers(): void {
-    this.router.navigateByUrl('/profesores?new=true');
+    this.router.navigateByUrl('/teachers?new=true');
     this.dialogRef.close(false);
   }
 

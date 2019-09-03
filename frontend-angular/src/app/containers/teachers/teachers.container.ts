@@ -64,7 +64,7 @@ export class TeacherContainer implements OnInit {
         if (this.teachers.length === 0) { this.emptyResult = true; }
       },
       () => {
-        this.router.navigateByUrl('/profesores');
+        this.router.navigateByUrl('/teachers');
       }
     );
   }
@@ -85,7 +85,7 @@ export class TeacherContainer implements OnInit {
   }
 
   public goToCourses(teacher: Teacher): void {
-    this.router.navigateByUrl('/cursos?teacher=' + teacher.id);
+    this.router.navigateByUrl('/courses?teacher=' + teacher.id);
   }
 
   private getTeachers(): void {

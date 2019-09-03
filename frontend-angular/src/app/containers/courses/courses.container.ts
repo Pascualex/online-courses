@@ -71,7 +71,7 @@ export class CoursesContainer implements OnInit {
         course.active = updatedCourse.active;
       },
       () => {
-        this.router.navigateByUrl('/cursos');
+        this.router.navigateByUrl('/courses');
       }
     );
   }
@@ -84,7 +84,7 @@ export class CoursesContainer implements OnInit {
         if (this.courses.length === 0) { this.emptyResult = true; }
       },
       () => {
-        this.router.navigateByUrl('/cursos');
+        this.router.navigateByUrl('/courses');
       }
     );
   }
@@ -121,10 +121,10 @@ export class CoursesContainer implements OnInit {
 
   public getLevelText(course: Course): string {
     switch (course.level) {
-      case (CourseLevel.Basic): return 'Básico';
-      case (CourseLevel.Intermediate): return 'Intermedio';
-      case (CourseLevel.Advanced): return 'Avanzado';
-      default: return 'Desconocido';
+      case (CourseLevel.Basic): return 'Basic';
+      case (CourseLevel.Intermediate): return 'Intermediate';
+      case (CourseLevel.Advanced): return 'Advanced';
+      default: return 'Unknown';
     }
   }
 

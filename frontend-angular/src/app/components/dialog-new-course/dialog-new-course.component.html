@@ -1,53 +1,53 @@
 <div class="dialog-new-course">
-  <h1 class="title">Registrar curso</h1>
+  <h1 class="title">Create course</h1>
     <form [formGroup]="formControl" *ngIf="teachers.length > 0" (ngSubmit)="createCourse()">
       <mat-form-field class="field" appearance="outline">
-        <mat-label class="field-content">Título</mat-label>
+        <mat-label class="field-content">Title</mat-label>
         <input matInput class="field-content" formControlName="title"
-               placeholder="Introduce su título" maxlength="50" autocomplete="off">
+               placeholder="Introduce the title" maxlength="50" autocomplete="off">
         <mat-hint align="end">{{formControl.get('title').value.length}} / 50</mat-hint>
         <mat-error *ngIf="formControl.get('title').hasError('required')">
-          Título <strong>necesario</strong>
+          Title <strong>required</strong>
         </mat-error>
         <mat-error *ngIf="!formControl.get('title').hasError('required')
                           && formControl.get('title').hasError('minlength')">
-          Debe tener al menos <strong>6 caracteres</strong>
+          Must have at least <strong>6 characters</strong>
         </mat-error>
         <mat-error *ngIf="!formControl.get('title').hasError('required')
                           && !formControl.get('title').hasError('minlength')">
-          Espacios solo válidos como separadores.
+          Spaces are only valid as separators
         </mat-error>
       </mat-form-field>
       <div class="row">
         <mat-form-field class="field half-row" appearance="outline">
-          <mat-label class="field-content">Horas</mat-label>
+          <mat-label class="field-content">Hours</mat-label>
           <input matInput class="field-content" formControlName="hours"
-                 placeholder="Introduce sus horas" maxlength="2" autocomplete="off"
+                 placeholder="Introduce the hours" maxlength="2" autocomplete="off"
                  align="end" (keypress)="numberOnly($event)">
           <mat-error *ngIf="formControl.get('hours').hasError('required')">
-            Horas <strong>necesarias</strong>
+            Hours <strong>required</strong>
           </mat-error>
           <mat-error *ngIf="!formControl.get('hours').hasError('required')">
-            Debe ser <strong>mayor que 0</strong>
+            Must be <strong>greater than 0</strong>
           </mat-error>
         </mat-form-field>
         <mat-form-field class="field half-row" appearance="outline">
-          <mat-label class="field-content">Nivel</mat-label>
+          <mat-label class="field-content">Level</mat-label>
           <mat-select formControlName="level">
-            <mat-option [value]="CourseLevel.Basic">Básico</mat-option>
-            <mat-option [value]="CourseLevel.Intermediate">Intermedio</mat-option>
-            <mat-option [value]="CourseLevel.Advanced">Avanzado</mat-option>
+            <mat-option [value]="CourseLevel.Basic">Basic</mat-option>
+            <mat-option [value]="CourseLevel.Intermediate">Intermediate</mat-option>
+            <mat-option [value]="CourseLevel.Advanced">Advanced</mat-option>
           </mat-select>
           <mat-error *ngIf="formControl.get('level').hasError('required')">
-            Nivel <strong>necesario</strong>
+            Level <strong>required</strong>
           </mat-error>
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field class="field two-thirds-row" appearance="outline">
-          <mat-label class="field-content">Profesor</mat-label>
+          <mat-label class="field-content">Teacher</mat-label>
           <input matInput class="field-content" formControlName="teacher"
-                 placeholder="Selecciona su profesor" maxlength="20" [matAutocomplete]="auto">
+                 placeholder="Select a teacher" maxlength="20" [matAutocomplete]="auto">
           <mat-icon matSuffix class="check" *ngIf="formControl.get('teacher').valid">
             check_circle
           </mat-icon>
@@ -58,29 +58,29 @@
             </mat-option>
           </mat-autocomplete>
           <mat-error *ngIf="formControl.get('teacher').hasError('required')">
-            Profesor <strong>necesario</strong>
+            Teachers <strong>required</strong>
           </mat-error>
           <mat-error *ngIf="!formControl.get('teacher').hasError('required')">
-            <strong>Selecciona</strong> un profesor de la lista
+            <strong>Select</strong> a teacher from the list
           </mat-error>
         </mat-form-field>
         <mat-form-field class="field one-third-row" appearance="outline">
-          <mat-label class="field-content">Estado</mat-label>
+          <mat-label class="field-content">State</mat-label>
           <mat-select formControlName="active">
-            <mat-option [value]="true">Activo</mat-option>
-            <mat-option [value]="false">Inactivo</mat-option>
+            <mat-option [value]="true">Active</mat-option>
+            <mat-option [value]="false">Inactive</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="bottom">
-        <button class="create">Registrar</button>
+        <button class="create">Create</button>
       </div>
     </form>
   <ng-container *ngIf="teachers.length === 0">
-    <h2 class="message">Sin profesores no es posible crear un curso.</h2>
+    <h2 class="message">Without teachers it is not possible to create a course.</h2>
     <div class="bottom">
       <button class="create teachers" (click)="goToTeachers()" tabIndex="-1">
-        Crear profesor
+        Register teacher
       </button>
     </div>
   </ng-container>
