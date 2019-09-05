@@ -47,7 +47,7 @@ The downside is that all the queries share a single thread, so, if the data need
 To get this backend up and running follow these steps:
 
 - Install Node JS.
-- Execute the following commands in the backend-node directory of the project.
+- Execute the following commands in the backend-node directory of the project:
   ```
   npm install
   npm start
