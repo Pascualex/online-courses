@@ -4,7 +4,7 @@ For this backend I used Node JS with TypeScript and Express. I decided to go wit
 
 ## Endpoints
 
-###Courses
+### Courses
 
 - **/courses**
   - **GET** - Returns all existing courses. A combination of the following filters can be specified:
@@ -25,7 +25,7 @@ For this backend I used Node JS with TypeScript and Express. I decided to go wit
   - **PUT** - Updates, if the course exists, the active property of the course that matches the id specified, given the following structure:
     - active: a boolean.
 
-###Teachers
+### Teachers
 
 - **/teachers**
   - **GET** - Returns all existing teachers. The following filter can be specified:

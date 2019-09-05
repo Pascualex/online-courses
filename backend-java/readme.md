@@ -4,9 +4,7 @@ For this backend I used Java with Spring Boot. I made the queries to the databas
 
 ## Endpoints
 
-###Courses
-
-###Courses
+### Courses
 
 - **/courses**
   - **GET** - Returns all existing courses. A combination of the following filters can be specified:
@@ -27,7 +25,7 @@ For this backend I used Java with Spring Boot. I made the queries to the databas
   - **PUT** - Updates, if the course exists, the active property of the course that matches the id specified, given the following structure:
     - active: a boolean.
 
-###Teachers
+### Teachers
 
 - **/teachers**
   - **GET** - Returns all existing teachers. The following filter can be specified:

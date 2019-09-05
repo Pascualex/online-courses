@@ -1,6 +1,6 @@
 # Online Courses - Database
 
-For the database of this project, I used Docker and MySQL. The Docker Compose file provided will automatically create the tables and populate them with data.
+For the database of this project, I used Docker and MySQL. The Docker Compose file provided in the db-init folder will automatically create the tables and populate them with data. The data used by Docker for the database persistence will be stored in the db-storage folder.
 
 ## Installation
 
