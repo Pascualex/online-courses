@@ -1,6 +1,6 @@
 import * as teacherRepository from '../repository/teacherRepository';
 import { Teacher } from '../model/Teacher';
-import * as teacherConditionalFilters from '../utils/teacherConditionalFile';
+import * as teacherConditionalFilters from '../utils/teacherConditionalFilters';
 
 export async function getTeachers(q: string): Promise<Teacher[]> {
   let teachers: Teacher[] = await teacherRepository.getTeachers();

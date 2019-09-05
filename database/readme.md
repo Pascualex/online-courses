@@ -6,6 +6,8 @@ For the database of this project, I used Docker and MySQL. The Docker Compose fi
 
 To get the database up and running follow these steps:
 
- - Install Docker.
- - Execute the following command in the database directory of the project.
-       docker-compose up -d
+- Install Docker.
+- Execute the following command in the database directory of the project.
+  ```
+  docker-compose up -d
+  ```
