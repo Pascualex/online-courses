@@ -27,20 +27,30 @@ Note: make sure to start the database docker before the backend.
 
 ### Courses public view
 
-![Screenshot 1](screenshots/screenshot-1.png)
+<kbd>
+  <img src="screenshots/screenshot-1.png">
+</kbd>
 
 ### Courses management view
 
-![Screenshot 2](screenshots/screenshot-2.png)
+<kbd>
+  <img src="screenshots/screenshot-2.png">
+</kbd>
 
 ### Course creation form
 
-![Screenshot 3](screenshots/screenshot-3.png)
+<kbd>
+  <img src="screenshots/screenshot-3.png">
+</kbd>
 
 ### Teachers management view
 
-![Screenshot 4](screenshots/screenshot-4.png)
+<kbd>
+  <img src="screenshots/screenshot-4.png">
+</kbd>
 
 ### Teacher registration form
 
-![Screenshot 5](screenshots/screenshot-5.png)
+<kbd>
+  <img src="screenshots/screenshot-5.png">
+</kbd>
