@@ -24,8 +24,23 @@ To get your own local version of the project up and running you will need:
 Note: make sure to start the database docker before the backend.
 
 ## Screenshots
+
+### Courses public view
+
 ![Screenshot 1](screenshots/screenshot-1.png)
+
+### Courses management view
+
 ![Screenshot 2](screenshots/screenshot-2.png)
+
+### Course creation form
+
 ![Screenshot 3](screenshots/screenshot-3.png)
+
+### Teachers management view
+
 ![Screenshot 4](screenshots/screenshot-4.png)
+
+### Teacher registration form
+
 ![Screenshot 5](screenshots/screenshot-5.png)
