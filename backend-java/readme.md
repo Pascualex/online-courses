@@ -48,4 +48,10 @@ To get this backend up and running follow these steps:
 
 - Install Java JDK 8.
 - Install Maven.
-- From your preferred IDE, compile the Maven project and run the application.
+- Execute the following commands in the backend-java directory of the project:
+  ```
+  mvn clean install
+  mvn exec:java
+  ```
+
+Note: make sure to set the JAVA_HOME environment variable to a valid JDK of Java 8.
